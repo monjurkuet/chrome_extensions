@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "Web Data Crawler",
+    "version": "1.0",
+    "description": "Crawls specific data points from a webpage and saves the data to a file",
+    "permissions": [
+      "activeTab",
+      "scripting",
+      "downloads",
+      "tabs"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
